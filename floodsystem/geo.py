@@ -12,6 +12,8 @@ from haversine import haversine
 
 
 def stations_by_distance(stations, p):
+    """A function which takes the list of stations and then uses the haversine formula imported from 
+    geo.py to calclate the distance from the station and the coordiante p."""
     distance = []
     stationname = []
     towns = []
