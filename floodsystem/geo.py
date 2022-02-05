@@ -59,4 +59,28 @@ def stations_by_river(stations):
             river_names[station.river] = [station.name]
     return river_names
     
+#Task 1E
+def rivers_by_station_number(stations, N):
+    #Sort rivers into order of monitoring stations on that river then print the top N  If there are some with the same valueas the Nth river then these should also be shown\
+    rivers = stations_by_river(stations)
+    top_rivers = []
+    stations_per_river = []
+    for river in rivers:
+        stations_per_river.append(len(rivers[river]))
+    sorted_stations_per_river = sorted(stations_per_river)
+    sorted_stations_per_river.reverse()
+    min_stations = sorted_stations_per_river[N-1]
+    print("\n" + str(min_stations) + "\n")
+    for river in rivers:
+        if len(rivers[river])>= min_stations:
+            top_rivers.append((river,len(rivers[river])))
+    final_rivers = sorted_by_key(top_rivers,1)
+    final_rivers.reverse()
+    return(final_rivers)
 
+
+
+        
+
+
+    
