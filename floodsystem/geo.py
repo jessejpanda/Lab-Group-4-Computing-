@@ -45,3 +45,18 @@ def stations_within_radius(stations, centre, r):
 
 """This function finds al stations wityhion a 10km radius"""
 
+#Task 1D
+
+def rivers_with_station(stations):
+    return set([station.river for station in stations])
+
+def stations_by_river(stations):
+    river_names = {}
+    for station in stations:
+        if station.river in river_names:
+            river_names[station.river].append(station.name)
+        else :
+            river_names[station.river] = [station.name]
+    return river_names
+    
+
