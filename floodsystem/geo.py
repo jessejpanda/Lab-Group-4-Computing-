@@ -41,7 +41,7 @@ def stations_within_radius(stations, centre, r):
         if distance[i]<r:
             name_distance.append(stationname[i])
         i+=1
-    return sorted_by_key(name_distance,0)
+    return sorted(name_distance)
 
 """This function finds al stations wityhion a 10km radius"""
 
@@ -70,7 +70,6 @@ def rivers_by_station_number(stations, N):
     sorted_stations_per_river = sorted(stations_per_river)
     sorted_stations_per_river.reverse()
     min_stations = sorted_stations_per_river[N-1]
-    print("\n" + str(min_stations) + "\n")
     for river in rivers:
         if len(rivers[river])>= min_stations:
             top_rivers.append((river,len(rivers[river])))
