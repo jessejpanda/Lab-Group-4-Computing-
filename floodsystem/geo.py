@@ -13,7 +13,8 @@ from haversine import haversine
 #Task 1B
 def stations_by_distance(stations, p):
     """A function which takes the list of stations and then uses the haversine formula imported from 
-    geo.py to calclate the distance from the station and the coordiante p. The function will return the ten furtherst and ten closest monitoring stations to the coordiante 
+    geo.py to calclate the distance from the station and the coordiante p. The function will return 
+    the ten furtherst and ten closest monitoring stations to the coordiante 
     C in the form of (station,town,distance from C). """
     distance = []
     stationname = []
