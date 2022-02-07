@@ -50,7 +50,7 @@ def stations_within_radius(stations, centre, r):
 #Task 1D
 
 def rivers_with_station(stations):
-    """This function takes a list of station objects as the arugement and returns a container with the 
+    """This function takes a list of station objects as the arugement and returns a set with the 
     names of the rivers with a monitoring station."""
     return set([station.river for station in stations])
 

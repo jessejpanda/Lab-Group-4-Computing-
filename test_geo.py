@@ -30,9 +30,26 @@ def test_stations_within_radius():
     assert stations_within_radius(stations, (52.2053, 0.1218),10)[0]== "Bin Brook"
     
 
-#Test for task 1D
+#Test for Task 1D
+def test_rivers_with_stations():
+    """Tests to check that the outputs from funtion "rivers_with_stations" are as expected"""
+    stations = build_station_list()
+    rivers = rivers_with_station(stations)
+    r = sorted(rivers)
+    assert type(r) is list
+    assert r == sorted(r)
 
-#Test for task 1E
+def test_stations_by_river():
+    """Tests to check that the outputs from funtion "stations_by_river" are as expected"""
+    river_names = {}
+    assert type(river_names) is dict
+    
+
+
+    
+
+
+#Test for Task 1E
 def test_rivers_by_station_number():
     """Tests to check that the outputs from funtion rivers_by_station_number are as expected"""
     stations = build_station_list()
@@ -43,6 +60,7 @@ def test_rivers_by_station_number():
     i=0
     for i in range(0,len(test)-1):
         assert test[i][1] >= test[i+1][1]
+
 
 
 

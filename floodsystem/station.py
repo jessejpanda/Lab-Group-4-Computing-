@@ -38,16 +38,20 @@ class MonitoringStation:
         d += "   river:         {}\n".format(self.river)
         d += "   typical range: {}".format(self.typical_range)
         return d
-
+    #Task 1F
     def typical_range_consistent(self):
+        """This fucntion takes monitoring station attributes(self) as the arguement and assign "True" to those with 
+        consistent data and "False" otherwise."""
         if self.typical_range ==  None:
             return False
         elif self.typical_range[0] - self.typical_range[1] > 0:
             return False
 
         return True
-    
+#Task 1F    
 def inconsistent_typical_range_stations(stations):
+    """This function takes the list of station objets as the argument and returns a list of monitoring stations which 
+    produce inconsistent data."""
     excluded_stations = [] 
     for station in stations:
         if not station.typical_range_consistent():
