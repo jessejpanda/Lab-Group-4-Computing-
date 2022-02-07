@@ -49,9 +49,14 @@ def stations_within_radius(stations, centre, r):
 #Task 1D
 
 def rivers_with_station(stations):
+    """This function takes a list of station objects as the arugement and returns a container with the 
+    names of the rivers with a monitoring station."""
     return set([station.river for station in stations])
 
 def stations_by_river(stations):
+    """This function takes a list of station objects as the arugement 
+    and then maps each river to the monitoring stations which is on the given river 
+    and then returns a dictionary of these river with their monitoring stations as the values."""
     river_names = {}
     for station in stations:
         if station.river in river_names:
@@ -63,7 +68,8 @@ def stations_by_river(stations):
 #Task 1E
 #Sort rivers into order of monitoring stations on that river then print the top N  If there are some with the same valueas the Nth river then these should also be shown\
 def rivers_by_station_number(stations, N):
-    """This funtion takes a number (N) as an argument. The function will return a tuple of river and the number of monitoring stations on that river sorted from high to low, but it
+    """This funtion takes a number (N) as an argument. The function will return a tuple of river 
+    and the number of monitoring stations on that river sorted from high to low, but it
     will only show the top N rivers."""
     rivers = stations_by_river(stations)
     top_rivers = []
