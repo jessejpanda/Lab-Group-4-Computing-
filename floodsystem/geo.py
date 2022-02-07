@@ -13,7 +13,8 @@ from haversine import haversine
 #Task 1B
 def stations_by_distance(stations, p):
     """A function which takes the list of stations and then uses the haversine formula imported from 
-    geo.py to calclate the distance from the station and the coordiante p."""
+    geo.py to calclate the distance from the station and the coordiante p. The function will return the ten furtherst and ten closest monitoring stations to the coordiante 
+    C in the form of (station,town,distance from C). """
     distance = []
     stationname = []
     towns = []
@@ -30,6 +31,7 @@ def stations_by_distance(stations, p):
 
 #Task 1C
 def stations_within_radius(stations, centre, r):
+    """The function which takes a point and a distance and returns all the monitoring stations which are within the distance from that point in alphabetical order. """
     distance = []
     stationname = []
     name_distance = []
@@ -43,7 +45,6 @@ def stations_within_radius(stations, centre, r):
         i+=1
     return sorted(name_distance)
 
-"""This function finds al stations wityhion a 10km radius"""
 
 #Task 1D
 
@@ -60,8 +61,10 @@ def stations_by_river(stations):
     return river_names
     
 #Task 1E
+#Sort rivers into order of monitoring stations on that river then print the top N  If there are some with the same valueas the Nth river then these should also be shown\
 def rivers_by_station_number(stations, N):
-    #Sort rivers into order of monitoring stations on that river then print the top N  If there are some with the same valueas the Nth river then these should also be shown\
+    """This funtion takes a number (N) as an argument. The function will return a tuple of river and the number of monitoring stations on that river sorted from high to low, but it
+    will only show the top N rivers."""
     rivers = stations_by_river(stations)
     top_rivers = []
     stations_per_river = []
