@@ -25,26 +25,28 @@ def plot_water_level_with_fit(station, dates, levels, p):
 #lower typical range when relaytive water level = 0
 
 def plot_water_levels(station, dates, levels):
+    """Takes an input of dates and water levels and plots both on a graph.
+    Also shows the typical high and low for the station on the same graph.
+    Does not show the graph."""
 
-    #plot
-    plt.plot(dates,levels, label = "$Water Levels$")
-    
-    #adds lines for typical high and low ranges
+    # Plot
+    plt.plot(dates, levels, label="$water levels$")
+
+    # add lines of typical high and low
     plt.plot([dates[-1], dates[0]], [station.typical_range[0],
-                                    station.typical_range[0]], color='brown', label="$Typical Low$")
+                                     station.typical_range[0]], color='g', label="$typical low$")
     plt.plot([dates[-1], dates[0]], [station.typical_range[1],
-                                    station.typical_range[1]], color='blue', label="$Typical High$")
-    
-    #adds labels for axis, title of plot and rotates date labels by 45 degrees
-    plt.xlabel('Date')
-    plt.ylabel('Water Level (m)')
+                                     station.typical_range[1]], color='r', label="$typical high$")
+
+    # Add axis labels, rotate date labels and add plot title
+    plt.xlabel('date')
+    plt.ylabel('water level (m)')
     plt.xticks(rotation=45)
     plt.title("Station: " + station.name)
 
-    #displays plot  
-    plt.show(block=False)
-    input('press <ENTER> to continue')
-
+    # Display stuff
+    plt.tight_layout()  # This makes sure plot does not cut off date labels
+    plt.show()
 
 
 
