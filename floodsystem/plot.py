@@ -5,18 +5,17 @@ from floodsystem.Analysis import polyfit
 
 #Task 2F
 def plot_water_level_with_fit(station, dates, levels, p):
-    plt.plot(dates,levels,'.',label =("Past measuremnts of relative water level"))
+    plt.plot(dates,levels,'.',label =("Past measuremnts of water level"))
     poly,x1 = polyfit(dates,levels,p)
-
     x = matplotlib.dates.date2num(dates)
     x_initial = np.linspace(x[0],x[-1],30)
-    plt.plot(x_initial,poly(x_initial - x1),label = "Polynomial")
+    plt.plot(x_initial,poly(x_initial - x1),label = "Polynomial for water level")
     plt.title(station[0].name)
-    plt.ylim(0,max(levels)+1 )
-    plt.plot(x_initial,np.ones(30),linewidth=2,label = "Maximum and minimum typical values typical value",color='g')
+    plt.ylim(0,max(levels)+0.05 )
+    plt.axhline(station[0].typical_range[0],label = "High and low typical range")
+    plt.axhline(station[0].typical_range[1])
     plt.xlabel("Date and Time")
     plt.ylabel("Relative Water Level")
-    plt.plot(x_initial,np.zeros(30),linewidth=4,color='g')
     plt.legend()
     plt.show()
     
