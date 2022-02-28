@@ -1,5 +1,5 @@
 from floodsystem.stationdata import build_station_list, update_water_levels
-from floodsystem.Flood import stations_level_over_threshold
+from floodsystem.flood import stations_level_over_threshold
 from floodsystem.station import MonitoringStation
 stations = build_station_list()
 update_water_levels(stations)
