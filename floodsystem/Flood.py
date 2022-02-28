@@ -20,11 +20,6 @@ def stations_highest_rel_level(stations, N):
     """Takes a list of all monitoring stations and a number N as an input. Returns the top N stations with the highest relative water level as a tuple of station name and relative water level. """
     level_relative_to_range = stations_level_over_threshold(stations,0)
     return level_relative_to_range[:N]
-    
-    
-
-    
-
 
 
     
