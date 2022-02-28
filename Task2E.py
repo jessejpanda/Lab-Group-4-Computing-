@@ -1,6 +1,6 @@
 from floodsystem.stationdata import *
 from floodsystem.plot import plot_water_levels
-from floodsystem.flood import stations_highest_rel_level
+from floodsystem.Flood import stations_highest_rel_level
 from floodsystem.datafetcher import fetch_measure_levels
 import datetime
 import matplotlib.pyplot as plt

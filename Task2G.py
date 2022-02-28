@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib as plt
 from floodsystem.datafetcher import fetch_measure_levels
 from floodsystem.Analysis import polyfit
-from floodsystem.flood import stations_level_over_threshold
+from floodsystem.Flood import stations_level_over_threshold
 from floodsystem.stationdata import build_station_list, update_water_levels
 
 def flood_warning_system():
