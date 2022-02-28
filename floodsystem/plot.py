@@ -42,6 +42,7 @@ def plot_water_levels(station, dates, levels):
     plt.ylabel('water level (m)')
     plt.xticks(rotation=45)
     plt.title("Station: " + station[0].name)
+    plt.legend()
 
     # Display stuff
     plt.tight_layout()  # This makes sure plot does not cut off date labels
