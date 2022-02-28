@@ -4,7 +4,7 @@ from floodsystem.stationdata import update_water_levels
 from floodsystem.datafetcher import fetch_measure_levels
 from floodsystem.Analysis import polyfit
 from floodsystem.plot import plot_water_level_with_fit
-from floodsystem.flood import stations_highest_rel_level, stations_level_over_threshold
+from floodsystem.Flood import stations_highest_rel_level, stations_level_over_threshold
 
 stations = build_station_list()
 update_water_levels(stations)
