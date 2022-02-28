@@ -1,6 +1,6 @@
 import datetime
 import numpy as np
-import matplotlib as plt
+import matplotlib.dates as plt
 from floodsystem.datafetcher import fetch_measure_levels
 from floodsystem.Analysis import polyfit
 from floodsystem.Flood import stations_level_over_threshold
@@ -23,7 +23,7 @@ def flood_warning_system():
         else:
             poly, x1 = polyfit(dates, levels, 4)
             derivative = np.polyder(poly, 4)
-            value = derivative(plt.dates.date2num(dates[-1]) - x1)
+            value = derivative(plt.date2num(dates[-1]) - x1)
             if station[1] > 1.5 and value > 0:
                 for i in stations:
                     if station[0].name == i.name and i.town != None:
