@@ -19,5 +19,7 @@ for station in wanted_stations:
         plot_water_level_with_fit(station,dates,levels,4)
         if counter > 4:
             break
+        # to ensure that the it only gives the top 5 stations
+        
 
 
