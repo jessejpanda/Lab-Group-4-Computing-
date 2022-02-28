@@ -1,5 +1,6 @@
 import datetime
 import numpy as np
+import matplotlib as plt
 from floodsystem.datafetcher import fetch_measure_levels
 from floodsystem.Analysis import polyfit
 from floodsystem.Flood import stations_level_over_threshold
